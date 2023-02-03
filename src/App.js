@@ -2,7 +2,7 @@ import './App.css';
 import ExpenseItemsWrap from './Components/Expense/ExpenseItemsWrap';
 import './Components/Expense/ExpenseItemsWrap';
 import './Components/Expense/ExpenseItemsWrap.css';
-import NewExpenseForm from './Components/NewExpense/NewExpenseForm';
+import NewExpense from './Components/NewExpense/NewExpense';
 
 function App() {
   const expenses = [
@@ -28,9 +28,9 @@ function App() {
   ];
 
   return (
-    <div className="expenses">
-      <NewExpenseForm/>
-      <ExpenseItemsWrap  items={expenses}>yes</ExpenseItemsWrap>
+    <div>
+      <NewExpense/>
+      <ExpenseItemsWrap  items={expenses}></ExpenseItemsWrap>
     </div>
   );
 }

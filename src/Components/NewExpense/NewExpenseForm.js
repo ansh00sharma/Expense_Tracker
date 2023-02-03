@@ -1,4 +1,5 @@
 import './NewExpenseForm.css';
+import './NewExpense.css';
 
 function NewExpenseForm(){
 
