@@ -1,13 +1,14 @@
+import React from 'react';
 import './NewExpense.css';
 import NewExpenseForm from './NewExpenseForm';
 
 function NewExpense(){
 
     return (
-        <div className='new-expense'>
+    <div className='new-expense'>
             <NewExpenseForm/>
-        </div>
+    </div>
     );
-}
+};
 
-export default NewExpense
+export default NewExpense;
