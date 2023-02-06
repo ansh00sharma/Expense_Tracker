@@ -1,8 +1,9 @@
 import React, {useState} from "react";
-import ExpenseItem from "./ExpenseItems";
 import './ExpenseItemsWrap.css';
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpenseFilter";
+import ExpenseList from "./ExpenseList";
+import ExpenseChart from "./ExpenseChart";
 
 function ExpenseItemsWrap(props){
 
@@ -12,15 +13,18 @@ function ExpenseItemsWrap(props){
     setselectedyear(selectedYear);
   }
 
+  const filteredyear = props.items.filter(expense => {
+     return expense.date.getFullYear().toString() === selectedyear;
+  });
+
+
+
     return(
     <div>
         <Card className="expenses">
           <ExpensesFilter selected={selectedyear} onSelection={selectYearHandler}/>
-          <ExpenseItem title={props.items[0].title} amount={props.items[0].amount} date={props.items[0].date}></ExpenseItem>
-          <ExpenseItem title={props.items[1].title} amount={props.items[1].amount} date={props.items[1].date}></ExpenseItem>
-          <ExpenseItem title={props.items[2].title} amount={props.items[2].amount} date={props.items[2].date}></ExpenseItem>
-          <ExpenseItem title={props.items[3].title} amount={props.items[3].amount} date={props.items[3].date}></ExpenseItem>
-      
+          <ExpenseChart expenses={filteredyear}/>
+          <ExpenseList items={filteredyear}/>
         </Card>
     </div>
     );
